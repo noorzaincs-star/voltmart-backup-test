@@ -48,3 +48,9 @@ Beginner
 ## Client
 
 VoltMart Electronics
+
+## Backup Verification
+
+The backup archive was tested using the `tar` command to confirm that it was readable and contained the `products.csv` file.
+
+The backup log was also checked to verify the backup start time, end time, and archive size.
