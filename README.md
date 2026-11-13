@@ -26,16 +26,27 @@ VoltMart Electronics operates an online catalog of electronic parts and needs a 
 
 ## Project Structure
 
-The project will contain:
+The project files are organized as follows:
 
-- `README.md`
-- `backup_plan.md`
-- `products/products.csv`
-- `scripts/backup.sh`
-- `scripts/restore.sh`
-- `backups/`
-- `logs/backup.log`
-- `report.md`
+```text
+.
+├── backup.sh
+├── backup_plan.md
+├── backup_success.png
+├── README.md
+├── report.md
+├── validation_run.png.jpeg
+├── restore.sh
+├── backups/
+│   ├── backup.log
+│   ├── restore.log
+│   └── products_backup_<timestamp>.tar.gz
+├── products/
+│   └── products.csv
+└── restore/
+    └── products/
+        └── products.csv
+```
 
 ## Expected Outcome
 
@@ -54,3 +65,7 @@ VoltMart Electronics
 The backup archive was tested using the `tar` command to confirm that it was readable and contained the `products.csv` file.
 
 The backup log was also checked to verify the backup start time, end time, and archive size.
+
+## Backup Success Screenshot
+
+![Backup Success](backup_success.png)

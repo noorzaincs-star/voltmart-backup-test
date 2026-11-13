@@ -6,7 +6,7 @@ This project demonstrates a basic backup and recovery process for VoltMart Elect
 
 ## 2. Test Method
 
-The scripts were run on 2026-11-13 in isolated temporary copies of the project, using the existing `products/products.csv`. This avoided changing the project's existing backups and restore files. The temporary test data was removed after verification.
+`backup.sh` and `restore.sh` were run in the actual VoltMart project directory in Ubuntu. `backup.sh` created a timestamped backup archive, and `restore.sh` dynamically selected and restored the latest available backup. The original `products/products.csv` and restored `restore/products/products.csv` were checked using SHA-256; both checksums matched.
 
 ## 3. Backup Test
 
@@ -21,15 +21,16 @@ The scripts were run on 2026-11-13 in isolated temporary copies of the project, 
 - Destination: `restore/products/products.csv`
 - Result: **PASS**
 - Verification: an older archive containing different product data was present; restore used the newly created latest archive.
-- The restored file existed and its SHA-256 matched the source file: `BD5243F6A4867B24427489FE2AEFFCC35F167836C94352F06594E9F0F313965E`.
+- The restored file existed and its SHA-256 matched the source file: `7eae4798c5f3ccb85b1d5442f7fc242d52cc09385a52819c509e4f59957894b7`.
 - `backups/restore.log` was generated.
 
 ## 5. Final Result
 
-**PASS** — the backup archive was created and readable, restore selected the latest archive, and the restored CSV matched the original. The tests were run on temporary copies; the existing project backup and restore data were left unchanged.
+**PASS** — the backup archive was created and readable, restore selected the latest archive, and the restored CSV matched the original.
 
 ## 6. Screenshot Evidence
 
-The screenshot below shows the successful backup process. It is the existing project image and was not captured during the isolated validation run above.
+The screenshot shows the Ubuntu validation run, including successful backup, successful restore, and matching SHA-256 checksums.
 
-![Backup Success](backup_success.png)
+![Actual Backup and Restore Validation](validation_run.png.jpeg)
+
