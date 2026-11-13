@@ -2,46 +2,40 @@
 
 ## 1. Project Overview
 
-This project demonstrates a basic backup and recovery process for an Ubuntu system.
+This project demonstrates a basic backup and recovery process for VoltMart Electronics product data.
 
-The purpose is to protect product data and test whether it can be restored successfully.
+## 2. Test Method
 
-## 2. Backup Test
+The scripts were run on 2026-11-13 in isolated temporary copies of the project, using the existing `products/products.csv`. This avoided changing the project's existing backups and restore files. The temporary test data was removed after verification.
 
-- Backup script: backup.sh
-- Backup method: tar.gz compression
-- Backup source: products/
-- Backup destination: backups/
-- Backup archive: products_backup_2026-11-11_04-50-09.tar.gz
-- Archive size: 1.0K
-- Result: SUCCESS
+## 3. Backup Test
 
-## 3. Restore Test
+- Script: `backup.sh`
+- Method: timestamped `tar.gz` archive of `products/`
+- Result: **PASS**
+- Verification: a new timestamped archive was created, `tar` listed `products/products.csv` in the archive, and `backups/backup.log` recorded the archive and its size.
 
-- Restore script: restore.sh
-- Restore destination: restore/
-- Restored file: products/products.csv
-- Result: SUCCESS
+## 4. Restore Test
 
-## 4. Verification
-
-The following checks were completed:
-
-- Backup archive created successfully.
-- Restore script extracted the backup.
-- products.csv was found in the restored folder.
-- Backup and restore logs were generated.
+- Script: `restore.sh`
+- Destination: `restore/products/products.csv`
+- Result: **PASS**
+- Verification: an older archive containing different product data was present; restore used the newly created latest archive.
+- The restored file existed and its SHA-256 matched the source file: `BD5243F6A4867B24427489FE2AEFFCC35F167836C94352F06594E9F0F313965E`.
+- `backups/restore.log` was generated.
 
 ## 5. Final Result
 
-The backup and recovery test was successful.
+**PASS** — the backup archive was created and readable, restore selected the latest archive, and the restored CSV matched the original. The tests were run on temporary copies; the existing project backup and restore data were left unchanged.
 
-The products.csv file was backed up and restored successfully.
+## 6. Screenshot Evidence
 
-## 6. Conclusion
+The screenshot below is the actual project image and shows a successful backup command. It is included as existing evidence; it was not captured during the isolated validation run above.
 
-This project demonstrates that a simple Bash-based backup and recovery process can help protect important product data.
+![Backup Success](backup_success.png)
 
-## 7. Backup Success Screenshot
+## Backup Success Screenshot
+
+The screenshot below shows the successful backup process.
 
 ![Backup Success](backup_success.png)
