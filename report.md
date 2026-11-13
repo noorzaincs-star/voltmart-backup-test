@@ -41,3 +41,7 @@ The products.csv file was backed up and restored successfully.
 ## 6. Conclusion
 
 This project demonstrates that a simple Bash-based backup and recovery process can help protect important product data.
+
+## 7. Backup Success Screenshot
+
+![Backup Success](backup_success.png)
