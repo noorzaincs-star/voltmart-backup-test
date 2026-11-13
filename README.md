@@ -68,4 +68,4 @@ The backup log was also checked to verify the backup start time, end time, and a
 
 ## Backup Success Screenshot
 
-![Backup Success](backup_success.png)
+![Backup Success](validation_run.png.jpeg)
