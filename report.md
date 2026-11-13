@@ -30,12 +30,6 @@ The scripts were run on 2026-11-13 in isolated temporary copies of the project, 
 
 ## 6. Screenshot Evidence
 
-The screenshot below is the actual project image and shows a successful backup command. It is included as existing evidence; it was not captured during the isolated validation run above.
-
-![Backup Success](backup_success.png)
-
-## Backup Success Screenshot
-
-The screenshot below shows the successful backup process.
+The screenshot below shows the successful backup process. It is the existing project image and was not captured during the isolated validation run above.
 
 ![Backup Success](backup_success.png)
